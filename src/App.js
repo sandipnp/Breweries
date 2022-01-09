@@ -14,7 +14,7 @@ const App = () => {
     axios.get('https://api.openbrewerydb.org/breweries')
       .then(res => res.data)
       .then(data => {
-        if (searchText == "") return data;
+        if (searchText === "") return data;
         return _.filter(data, { "city": searchText })
       })
       .then(data => setBreweries(data))
